@@ -27,8 +27,8 @@ function showPosition(position) {
     });
     
     request.done(function( msg ) {
-      var result_array = JSON.parse(msg);
-      x.val(result_array);
+      var result = msg;
+      x.val(result);
     });
     request.fail(function( jqXHR, textStatus ) {
       x.val("Request failed: " + textStatus );
