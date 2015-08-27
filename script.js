@@ -27,7 +27,8 @@ function showPosition(position) {
     });
     
     request.done(function( msg ) {
-      x.val(msg);
+      
+      x.val(JSON.parse(msg));
     });
     request.fail(function( jqXHR, textStatus ) {
       x.val("Request failed: " + textStatus );
