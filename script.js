@@ -22,7 +22,7 @@ function showPosition(position) {
     "\nLongitude: " + position.coords.longitude);
     
     var request = $.ajax({
-      url:"api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+"&lon="+position.coords.longitude,
+      url:"https://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+"&lon="+position.coords.longitude,
       dataType: "json",
     });
     
