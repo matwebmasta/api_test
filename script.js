@@ -18,8 +18,23 @@ $(document).ready(function(){
     
   }
 function showPosition(position) {
-    x.val("Latitude: " + position.coords.latitude + 
-    "\n Longitude: " + position.coords.longitude);
+    x.val("NOW LOADING! Debug datas follows\nLatitude: " + position.coords.latitude + 
+    "\nLongitude: " + position.coords.longitude);
+    
+    var request = $.ajax({
+      url:"api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+"&lon="+position.coords.longitude,
+      dataType: "json";
+    )};
+    
+    request.done(function( msg ) {
+      x.val(msg);
+    });
+    request.fail(function( jqXHR, textStatus ) {
+      x.val("Request failed: " + textStatus );
+    });
+    
+    
+    
 }
 
 function showError(error) {
