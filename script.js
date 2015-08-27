@@ -19,7 +19,7 @@ $(document).ready(function(){
   }
 function showPosition(position) {
     x.val("Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude);
+    "\n Longitude: " + position.coords.longitude);
 }
 
 function showError(error) {
